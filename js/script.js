@@ -57,10 +57,10 @@ function ampliarProductos(){
   document.querySelector('.content-block').innerHTML += "<div id='ampliar-foto'>";
   for(var i = 0; i <= 8; i++){
   document.querySelector('.content-block').innerHTML += "<p id='texto' class='pop-text'>"+ descripciones[i] +" <a class='cerrar btn' onclick='cerrar()'>Cerrar</a></p>"
-}
-  for(var j = 0; j <= 8; j++){
-  document.querySelector('.content-block').innerHTML += "<img class='pop-image' src='img/productos/"+ imgProductos[j] +".png' />";
-  
+  }
+  for(var i = 0; i <= 8; i++){
+  document.querySelector('.content-block').innerHTML += "<img class='pop-image' src='img/productos/"+ imgProductos[i] +".png' />";
+
   }
 
   document.querySelector('.content-block').innerHTML += "</div>";
