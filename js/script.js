@@ -45,7 +45,7 @@ function productos(){
   for(var i = 0; i <= 8; i++){
     document.querySelector('#productos').innerHTML += "<div class='item'>\
   <img onclick='ampliarProductos()' src='img/productos/"+ imagenes[i] +"_min.png'/>\
-  <div id='back-img' style='display:none'>\
+  <div id='back-img'>\
   <p id='texto'> <a class='cerrar btn' onclick='cerrar()'>Cerrar</a></p>\
   <img id='img-grande' src='img/productos/"+ imagenes[i] +".png' />\
   </div>\
@@ -60,12 +60,9 @@ function productos(){
 }
 
 function ampliarProductos(){
-  document.querySelector('#back-img').classList.toggle('ampliar-foto');
-  document.querySelector('#back-img').style.display = 'block';
-  document.querySelector('#texto').classList.toggle('pop-text');
-  document.querySelector('#texto').style.display = 'block';
-  document.querySelector('#img-grande').classList.toggle('pop-image');
-  document.querySelector('#img-grande').style.display = 'block';
+  document.querySelector('#back-img').classList.add('ampliar-foto');
+  document.querySelector('#texto').classList.add('pop-text');
+  document.querySelector('#img-grande').classList.add('pop-image');
 
 }
 
