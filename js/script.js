@@ -39,41 +39,41 @@ function productos(){
 
   var imagenes = [1,2,3,4,5,6,7,8,9];
 
+  document.querySelector('#content-h1').innerHTML = "<h1 class='name_portfolio'>Productos</h1>";
+
   document.querySelector('.content-block').innerHTML = "<div id='productos'>";
   for(var i = 0; i <= 8; i++){
-  document.querySelector('.content-block').innerHTML += "<img onclick='ampliarProductos()' src='img/productos/"+ imagenes[i] +"_min.png'/>";
+    document.querySelector('#productos').innerHTML += "<div class='item'>\
+  <img onclick='ampliarProductos()' src='img/productos/"+ imagenes[i] +"_min.png'/>\
+  <div id='back-img' style='display:none'>\
+  <p id='texto'> <a class='cerrar btn' onclick='cerrar()'>Cerrar</a></p>\
+  <img id='img-grande' src='img/productos/"+ imagenes[i] +".png' />\
+  </div>\
+  </div>";
   }
+
+  //  document.querySelector('#productos').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
   document.querySelector('.content-block').innerHTML += "</div>";
 
-}
 
+
+}
 
 function ampliarProductos(){
-
-  var descripciones = ["descripcion 1","descripcion 2","descripcion 3","descripcion 4","descripcion 5","descripcion 6","descripcion 7","descripcion 8","descripcion 9"]
-  var imgProductos = [1,2,3,4,5,6,7,8,9]
-
-
-  document.querySelector('.content-block').innerHTML += "<div id='ampliar-foto'>";
-  for(var i = 0; i <= 8; i++){
-  document.querySelector('.content-block').innerHTML += "<p id='texto' class='pop-text'>"+ descripciones[i] +" <a class='cerrar btn' onclick='cerrar()'>Cerrar</a></p>"
-  }
-  for(var i = 0; i <= 8; i++){
-  document.querySelector('.content-block').innerHTML += "<img class='pop-image' src='img/productos/"+ imgProductos[i] +".png' />";
-
-  }
-
-  document.querySelector('.content-block').innerHTML += "</div>";
-
-
+  document.querySelector('#back-img').classList.toggle('ampliar-foto');
+  document.querySelector('#back-img').style.display = 'block';
+  document.querySelector('#texto').classList.toggle('pop-text');
+  document.querySelector('#texto').style.display = 'block';
+  document.querySelector('#img-grande').classList.toggle('pop-image');
+  document.querySelector('#img-grande').style.display = 'block';
 
 }
 
-function cerrar(){
-  //document.querySelector("#ampliar-foto").classList.add('quit');
-  //setTimeout(function(){
-  //  document.querySelector("#ampliar-foto").remove();
-  //},500);
-  document.querySelector("#ampliar-foto").remove();
 
+
+function cerrar(){
+
+
+  document.querySelector("#back-img").remove();
+//  document.querySelector("#back-img").style.display = 'none';
 }
