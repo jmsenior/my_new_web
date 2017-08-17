@@ -38,21 +38,22 @@ function portfolio(){
 function productos(){
 
   var imagenes = [1,2,3,4,5,6,7,8,9];
+  var descripciones = ["descripcion1","descripcion2","descripcion3","descripcion4","descripcion5","descripcion6","descripcion7","descripcion8","descripcion9",]
 
   document.querySelector('#content-h1').innerHTML = "<h1 class='name_portfolio'>Productos</h1>";
 
   document.querySelector('.content-block').innerHTML = "<div id='productos'>";
   for(var i = 0; i <= 8; i++){
     document.querySelector('#productos').innerHTML += "<div class='item'>\
-  <img onclick='ampliarProductos()' src='img/productos/"+ imagenes[i] +"_min.png'/>\
-  <div id='back-img'>\
+  <img onclick='ampliarProductos()' src='img/productos/" + imagenes[i] + "min.png'/>\
+  <div id='back-img' class='hide'>\
   <p id='texto'> <a class='cerrar btn' onclick='cerrar()'>Cerrar</a></p>\
-  <img id='img-grande' src='img/productos/"+ imagenes[i] +".png' />\
+  <img id='img-grande' src='img/productos/" + imagenes[i] + ".png' />\
   </div>\
   </div>";
   }
 
-  //  document.querySelector('#productos').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
+  //document.querySelector('#productos').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
   document.querySelector('.content-block').innerHTML += "</div>";
 
 
@@ -60,17 +61,27 @@ function productos(){
 }
 
 function ampliarProductos(){
-  document.querySelector('#back-img').classList.add('ampliar-foto');
+ document.querySelector('#back-img').classList.remove('hide');
+ document.querySelector('#back-img').classList.add('ampliar-foto');
   document.querySelector('#texto').classList.add('pop-text');
   document.querySelector('#img-grande').classList.add('pop-image');
-
 }
 
 
 
 function cerrar(){
+  var objetoCerrar = document.querySelector('#back-img');
+
+if ( objetoCerrar.classList.contains('hide')){
+  objetoCerrar.classList.remove('hide');
+  objetoCerrar.classList.add('ampliar-foto');
+}else if ( objetoCerrar.classList.contains('ampliar-foto')){
+
+  objetoCerrar.classList.remove('ampliar-foto');
+  objetoCerrar.classList.add('hide');
+}
 
 
-  document.querySelector("#back-img").remove();
+  //document.querySelector("#back-img").remove();
 //  document.querySelector("#back-img").style.display = 'none';
 }
