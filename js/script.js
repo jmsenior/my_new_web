@@ -1,7 +1,7 @@
 function inicio(){
 
 
-  document.querySelector('#block-menu').innerHTML = "<div id='home'>\
+  document.querySelector('.content-block').innerHTML = "<div id='home'>\
     <ul class='menu-list'>\
       <li><a class='menu-links' href='#'>Home</a></li>\
       <li><a onclick='portfolio()' class='menu-links' href='#'>Portfolio</a></li>\
@@ -9,7 +9,15 @@ function inicio(){
       <li><a class='menu-links' href='#'>Bio</a></li>\
       <li><a class='menu-links' href='#'>Contact</a></li>\
     </ul>\
-  </div>";
+  </div>\
+  <div class='symbols'>\
+  <div class='servicios'><span>Diseño gráfico</span><i class='fa fa-pencil'></i></div>\
+  <div class='servicios'><span>Diseño web</span><i class='fa fa-desktop'></i></div>\
+  <div class='servicios'><span>Motion graphics</span><i class='fa fa-film'></i></div>\
+  <div class='servicios'><span>Diseño 3D</span><i class='fa fa-cube'></i></div>\
+  <div class='servicios'><span>Desarrollo Front-End</span><i class='fa fa-code'></i></div>\
+  <div class='servicios'><span>Web VR</span><i class='fa fa-eye'></i></div>\
+  <div>";
     document.querySelector('#content-h1').innerHTML = "<h1 class='name_home'>Welcome</h1>";
 
 };
@@ -18,7 +26,7 @@ inicio();
 
 function portfolio(){
 
-    document.querySelector('#block-menu').innerHTML = "<div id='portfolio'>\
+    document.querySelector('.content-block').innerHTML = "<div id='portfolio'>\
     <ul class='menu-list'>\
     <li><a class='menu-links' href='#'  onclick='productos()'>Productos</a></li>\
     <li><a class='menu-links' href='#' onclick='logotipos()'>Logotipos</a></li>\
@@ -38,70 +46,28 @@ function portfolio(){
   function productos(){
 
     var imagenes = [1,2,3,4,5,6,7,8,9];
-    var descripciones = ["descripcion1","descripcion2","descripcion3","descripcion4","descripcion5","descripcion6","descripcion7","descripcion8","descripcion9"]
+    var descripciones = ["Productos de higiene y cuidado personal para países de Europa y Oriente Medio.","Productos de higiene y cuidado personal para países de Europa y Oriente Medio.","Productos de higiene y cuidado personal para países de Europa y Oriente Medio.","Productos de higiene y cuidado personal para países de Europa y Oriente Medio.","Productos de higiene y cuidado personal para países de Europa y Oriente Medio.","Stickers para la plataforma de mensajería LINE <a href='https://store.line.me/stickershop/search/creators/es?q=Jm+visual+creativity' target='_blank' class='preview'><i class='fa fa-eye'></i> Ver producto</a>","Stickers para la plataforma de mensajería LINE <a href='https://store.line.me/stickershop/search/creators/es?q=Jm+visual+creativity' target='_blank' class='preview'><i class='fa fa-eye'></i> Ver producto</a>","Stickers para la plataforma de mensajería LINE <a href='https://store.line.me/stickershop/search/creators/es?q=Jm+visual+creativity' target='_blank' class='preview'><i class='fa fa-eye'></i> Ver producto</a>","Diseño de Vinilo para Trabet Records"]
 
     document.querySelector('#content-h1').innerHTML = "<h1 class='name_portfolio'>Productos</h1>";
 
     document.querySelector('.content-block').innerHTML = "<div id='productos'>";
     for(var i = 0; i <= 8; i++){
       document.querySelector('#productos').innerHTML += "<div class='item'>\
-    <img onclick='ampliarProductos("+ imagenes[i] +")' src='img/productos/" + imagenes[i] + "_min.png'/>\
+    <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/productos/" + imagenes[i] + "_min.png'/>\
     <div id='back-img" + imagenes[i] + "' class='hide'>\
-    <p id='texto" + imagenes[i] + "'>" + descripciones[i] + " <a class='cerrar btn' onclick='cerrar(" + imagenes[i] + ")'>Cerrar</a></p>\
+    <div class='content'>\
+    <a class='cerrar btn' onclick='cerrar(" + imagenes[i] + ")'><i class='fa fa-remove'></i></a>\
     <img id='img-grande" + imagenes[i] + "' src='img/productos/" + imagenes[i] + ".png' />\
+    <p id='texto" + imagenes[i] + "'>" + descripciones[i] + " </p>\
+    </div>\
     </div>\
     </div>";
     }
 
-  //  document.querySelector('.content-block').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
+    document.querySelector('#productos').innerHTML += "<a href='#' class='volver_listado' onclick='portfolio()'><i class='fa fa-chevron-left'></i> Volver</a>";
     document.querySelector('.content-block').innerHTML += "</div>";
   }
-  // logotipos
 
-  function logotipos(){
-
-    var imagenes = [1,2,3,4,5,6,7,8,9];
-    var descripciones = ["descripcion1","descripcion2","descripcion3","descripcion4","descripcion5","descripcion6","descripcion7","descripcion8","descripcion9"]
-
-    document.querySelector('#content-h1').innerHTML = "<h1 class='name_portfolio'>Logotipos</h1>";
-
-    document.querySelector('.content-block').innerHTML = "<div id='logotipos'>";
-    for(var i = 0; i <= 8; i++){
-      document.querySelector('#logotipos').innerHTML += "<div class='item'>\
-    <img onclick='ampliarProductos("+ imagenes[i] +")' src='img/logotipos/" + imagenes[i] + "_min.png'/>\
-    <div id='back-img" + imagenes[i] + "' class='hide'>\
-    <p id='texto" + imagenes[i] + "'>" + descripciones[i] + " <a class='cerrar btn' onclick='cerrar(" + imagenes[i] + ")'>Cerrar</a></p>\
-    <img id='img-grande" + imagenes[i] + "' src='img/logotipos/" + imagenes[i] + ".png' />\
-    </div>\
-    </div>";
-    }
-
-  //  document.querySelector('.content-block').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
-    document.querySelector('.content-block').innerHTML += "</div>";
-  }
-  // webs
-
-  function webs(){
-
-    var imagenes = [1,2,3,4,5,6,7,8,9];
-    var descripciones = ["descripcion1","descripcion2","descripcion3","descripcion4","descripcion5","descripcion6","descripcion7","descripcion8","descripcion9"]
-
-    document.querySelector('#content-h1').innerHTML = "<h1 class='name_portfolio'>Webs</h1>";
-
-    document.querySelector('.content-block').innerHTML = "<div id='webs'>";
-    for(var i = 0; i <= 8; i++){
-      document.querySelector('#webs').innerHTML += "<div class='item'>\
-    <img onclick='ampliarProductos("+ imagenes[i] +")' src='img/webs/" + imagenes[i] + "_min.png'/>\
-    <div id='back-img" + imagenes[i] + "' class='hide'>\
-    <p id='texto" + imagenes[i] + "'>" + descripciones[i] + " <a class='cerrar btn' onclick='cerrar(" + imagenes[i] + ")'>Cerrar</a></p>\
-    <img id='img-grande" + imagenes[i] + "' src='img/webs/" + imagenes[i] + ".png' />\
-    </div>\
-    </div>";
-    }
-
-  //  document.querySelector('.content-block').innerHTML += "<a href='#' class='' onclick='portfolio()'>  Volver</a>";
-    document.querySelector('.content-block').innerHTML += "</div>";
-  }
 
 //ampliar foto
 
