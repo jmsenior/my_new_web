@@ -1,15 +1,51 @@
+function ejecucion(){
+  insertarCSS();
+  insertarFormas();
+  insertarFooter();
+  inicio();
+}
+ejecucion();
+
+
+
 function insertarCSS(){
 if(window.innerWidth <= 660){
   document.querySelector('head').innerHTML = '<link href="css/mobile.css" rel="stylesheet" media="all"/>';
-
+  document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
 }else if(window.innerWidth >= 661 && window.innerWidth <= 1023){
   document.querySelector('head').innerHTML = '<link href="css/tablet.css" rel="stylesheet" media="all"/>';
+  document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
 }else{
 document.querySelector('head').innerHTML = '<link href="css/desktop.css" rel="stylesheet" media="all"/>';
+document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
 }
 
 }
-insertarCSS();
+//insertarCSS();
+
+function insertarFormas(){
+  document.querySelector('#name-block').innerHTML += '<svg id="triangulo"><polygon points="90,120 350,190 160,210" style="fill:yellow;" /></svg>\
+    <svg id="cuadrado"><rect width="150" height="150" fill="#94FF2F" /></svg>\
+    <svg id="circulo"><circle cx="100" cy="100" r="100" fill="#57FFBD"/></svg>\
+    <svg id="circulo-lineal1"><circle stroke-dasharray="25,100" cx="250" cy="250" r="200" fill="transparent" stroke="#FFDD7D" stroke-width="20" stroke-linecap="square"/></svg>\
+    <svg id="circulo-lineal2"><circle stroke-dasharray="25,3, 40, 20, 100" cx="450" cy="450" r="450" fill="transparent" stroke="gray" stroke-width="20" stroke-linecap="square"/></svg>';
+}
+//insertarFormas();
+
+function insertarFooter(){
+  document.querySelector('footer').innerHTML += '<div id="external-links">\
+    <ul class="e_links">\
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>\
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>\
+      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>\
+      <li><a href="#"><i class="fa fa-codepen"></i></a></li>\
+      <li><a href="#"><i class="fa fa-github"></i></a></li>\
+      <li><a href="#"><i class="fa fa-vimeo"></i></a></li>\
+    </ul>\
+  </div>';
+}
+//insertarFooter();
+
 function inicio(){
 
 
@@ -18,7 +54,7 @@ function inicio(){
       <li><a onclick='portfolio()' class='menu-links' href='#'>Portfolio</a></li>\
       <li><a class='menu-links' href='#'>Playground</a></li>\
       <li><a onclick='biography()' class='menu-links' href='#'>Bio</a></li>\
-      <li><a class='menu-links' href='#'>Contact</a></li>\
+      <li><a onclick='contacto()' class='menu-links' href='#'>Contact</a></li>\
     </ul>\
   </div>\
   <div class='symbols'>\
@@ -35,7 +71,7 @@ function inicio(){
       document.querySelector('#content-h1').innerHTML += "<p class='texto_bienve'>Bienvenido a mi nueva web, en la que podrás encontrar algunos ejemplos de mis trabajos en todos los ámbitos señalados, también puedes ver más trabajos y ejemplos en los enlaces externos";
     }
 };
-inicio();
+//inicio();
 
 
 function portfolio(){
@@ -291,7 +327,7 @@ var imagenesTitle = ['Html5','Css3','Javascript','jQuery','jQuery-Mobile y jQUer
 
   document.querySelector('.content-block').innerHTML = "<div id='bio'>";
 
-  for(var i = 0; i <= imagenesBio.length; i++){
+  for(var i = 0; i < imagenesBio.length; i++){
     document.querySelector('#bio').innerHTML += "<img title='" + imagenesTitle[i] + "' src='img/logos/" + imagenesBio[i] + ".png'/>";
   }
 
@@ -302,5 +338,26 @@ var imagenesTitle = ['Html5','Css3','Javascript','jQuery','jQuery-Mobile y jQUer
 //
 
 function contacto(){
+ document.querySelector('.content-block').innerHTML = '<div class="bloque_form1">\
+   <div><img class="img_contact" src="img/varios/logo_jm.png" />\
+   <h3 class="contact_h3">JM Visual Creativity</h3></div>\
+   </div>\
+   <div class="bloque_form2">\
+   <form action="mail.php" method="post">\
+   <div><label for="Nombre"><i class="fa fa-user"></i> Nombre</label>\
+   <input type="text" name="name" placeholder="Nombre" required/></div>\
+   <div><label for="E-mail"><i class="fa fa-envelope-o"></i> E-mail</label>\
+   <input type="email" name="email" placeholder="E-mail" required/></div>\
+   <div><label for="Asunto"><i class="fa fa-comment"></i> Asunto</label>\
+   <input type="text" name="subject" placeholder="Asunto" required></div>\
+   <div><label for="Descripción"><i class="fa fa-pencil"></i> Descripción</label>\
+   <textarea cols="50" rows="4" name="message" placeholder="Descripción">\
+   </textarea></div>\
+   <input type="submit" value="ENVIAR"/>\
+   <input type="reset" value="LIMPIAR" />\
+   </form>\
+   </div>';
 
+
+     document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Contacto</h1>";
 }
