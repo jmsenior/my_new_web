@@ -1,8 +1,67 @@
+/*
+
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmhsss/-----------------/sssymmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhy++:------------------------------/+shMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMMMNmyo::---------------------------------------::+smMMMMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMdy/:-----------------------------------------------:+shMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMds+:------------------------------------------------------/sdMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMNho:-----------------------------------------------------------:+dMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMNs::---------------------------------------------------------------:/omMMMMMMMMMMMMMM-
+MMMMMMMMMMMMNs/---------------------------------------------------------------------:smMMMMMMMMMMMM-
+MMMMMMMMMMMy:-------------------------------------------------------------------------:hMMMMMMMMMMM-
+MMMMMMMMMms:--------------------------------------------------:------------------------:omMMMMMMMMM-
+MMMMMMMMh:----------::---------------------------------------:d+-------------------------:yMMMMMMMM-
+MMMMMMMs:-----------om/--------------------------------------:Mmo:------------------------:+NMMMMMM-
+MMMMMmo:------------oMms:------------------------------------:MMMd:-------------------------+NMMMMM-
+MMMMm/--------------oMMMms:----------------------------------:MMMMms:-----------------------:oNMMMM-
+MMMM/---------------oMMMMMmo:--------------------------------:MMMMMMy/------------------------oNMMM-
+MMMs----------------oMMMMMMMmo:------------------------------:MMMMMMMms:-----------------------+NMM-
+MMy:----------------oMMMMMMMMMmo:----------------------------:MMMMMMMMNy/-----------------------oMM-
+Md/-----------------oMMMMNmMMMMMdo:--------------------------:MMMMMMMMMMNy:---------------------:hM-
+No------------------oMMMMs-odMMMMMs:-------------------------:MMMMMhyNMMMMh+:--------------------oM-
+m-------------------oMMMMs--:omMMMMmo:-----------------------:MMMMMs-/hMMMMNo:-------------------:h-
+y-------------------oMMMMs-----omMMMMmo:---------------------:MMMMMs--:yNMMMMh+-------------------o.
+--------------------oMMMMs------+dMMMMMmo:-------------------:MMMMMs----:NMMMMm+:------------------`
+--------------------oMMMMs--------+dMMMMMmo:-----------------:MMMMMs-----:sNMMMMd:-----------------`
+--------------------oMMMMs---------:+dMMMMMdo:---------------:MMMMMs-------+mMMMMmo:---------------`
++-------------------oMMMMs------------omMMMMMs:--------------:MMMMMs---------sMMMMMm:--------------`
+Md+:----------------oMMMMs-------------:omMMMMmo:------------:MMMMMs---------:+dMMMMNo:------------`
+MMMd+---------------oMMMMs----------------omMMMMmo-----------:MMMMMs------------+MMMMMh:-----------`
+MMMMMd+:------------oMMMMs-----------------:yMMMMMmo:--------:MMMMMs-------------+dMMMMNs----------`
+oyNMMMMd+-----------oMMMMs------------------:+dMMMMMmo-------:MMMMMs--------------:yMMMMMy/--------`
+--:yNMMMNh+:--------oMMMMs--------------------:+dMMMMMdo:----:MMMMMs---------------:/dMMMMNo-------`
+y---/yNMMMMh/-------oMMMMs----------------------:omMMMMMd:---:MMMMMs-----------------:yNMMMMh/----o.
+m----:/yMMMMNh/-----oMMMMs------------------------:omMMMMmo:-:MMMMMs------------------:/mMMMMNs:-:h-
+No-----:sNMMMMNh/---oMMMMs--------------------------:omMMMMmo/MMMMMs--------------------/yNMMMNd+oM-
+Md/------/sNMMMMNh/-oMMMMs----------------------------:yMMMMMmMMMMMs---------------------:/dMMMMNNM-
+MMy:-------/yNMMMMNhdMMMMs-----------------------------:odMMMMMMMMMs-----------------------:smMMMMM-
+MMMs--------:/yNMMMMMMMMMs-------------------------------:odMMMMMMMs-------------------------+mMMMM-
+MMMM/----------/yNMMMMMMMs---------------------------------:odMMMMMs--------------------------sNMMM-
+MMMMm/----------:/yNMMMMMs-----------------------------------:omMMMs------------------------:oNMMMM-
+MMMMMmo:-----------/hNMMMs-------------------------------------:omMs------------------------+NMMMMM-
+MMMMMMMs:-----------:/yNMs---------------------------------------:so----------------------:+NMMMMMM-
+MMMMMMMMh:-------------+ho---------------------------------------------------------------:yMMMMMMMM-
+MMMMMMMMMms:------------::-------------------------------------------------------------:omMMMMMMMMM-
+MMMMMMMMMMMy:-------------------------------------------------------------------------:hMMMMMMMMMMM-
+MMMMMMMMMMMMNs/---------------------------------------------------------------------:smMMMMMMMMMMMM-
+MMMMMMMMMMMMMMNs::---------------------------------------------------------------:/omMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMNho:-----------------------------------------------------------:+dMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMds+:------------------------------------------------------/sdMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMdy/:-----------------------------------------------:+shMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMMMNmyo::---------------------------------------::+smMMMMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhy++:------------------------------/+shMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmhsss/-----------------/sssmmmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-
+
+*/
+
 *{
   margin:0;
   padding:0;
 }
-
+::selection{
+  background:#ffa500;
+  color:#a52a2a;
+}
 /* font- face *********************************/
 
 @font-face {
@@ -132,6 +191,15 @@
   left: 20px;
   text-align: center;
   }
+  .home-quote{
+    font-family: 'oswaldregular';
+    font-size: 24px;
+    color:#c77d0a;
+    padding-top: 10px;
+    display: block;
+    clear: both;
+}
+
   .servicios{
     float:left;
     margin:0px 5px;
@@ -221,7 +289,7 @@
     font-family: 'yesteryearregular', cursive;
   }
   /* productos list y block */
-  #productos,#logotipos,#webs,#colaboraciones,#carteles,#videos,#realidad{
+  #productos,#logotipos,#webs,#colaboraciones,#carteles,#videos,#realidad,#playground,#bio,#contacto{
     height: 100%;
     overflow-y:auto;
   }
@@ -303,17 +371,19 @@
 }
 
 .volver{
-  color:#e8880d !important;
+  color:#a52a2a !important;
+  opacity:.5;
 }
 .volver_listado{
-  color: #ec391a !important;
+  color: #a52a2a !important;
   padding: 10px 20px;
   font-family: 'oswaldregular',sans-serif;
   font-size: 20px;
   text-decoration: none;
   clear:both;
   width:30%;
-  display: inline-block;
+  display: block;
+  opacity:.5;
 }
 /* menu */
 
@@ -354,17 +424,12 @@
 
 .pop-text{
   position: relative;
-/*  -webkit-animation: pop-img .5s ease-in-out;*/
   display: block;
 
   margin: 0 auto;
   font-family: 'oswaldregular', sans-serif;
   text-align: center;
-/*  background: #ffffff;
-  padding: 10px;
-  border: 5px solid #f7f7f7;
-  border-radius: 20px;
-  box-shadow: 3px 3px 5px rgba(0,0,0,.5);*/
+  padding-top:10px;
 }
 
 .pop-image{
@@ -469,6 +534,26 @@
     width: 500px;
     z-index:9;
 }
+.texto_play{
+  font-family: 'oswaldregular';
+    font-size: 20px;
+    color: #353230;
+    width: 500px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+
+}
+
+#playground .min-img {
+    margin: 17px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    float: left;
+  }
+
+
 @-webkit-keyframes bounce{
 
 		0% {-webkit-transform:translateY(0%);}
@@ -478,66 +563,62 @@
 		100% {-webkit-transform:translateY(0%);}
 
 					}
-#bio{
-  margin-top: 5%;
-}
-#bio img{
+
+.programas{
+
   margin: 5px;
+    height: auto;
+    width: 70px;
 
 }
-#bio img:hover{
+.programas:hover{
   -webkit-animation:bounce .3s ease-in-out;
 }
-
+.retrato{
+  -webkit-animation:appear-title .3s ease-in-out;
+  position:relative;
+  margin:0 auto;
+  display:block;
+}
+.frase {
+  -webkit-animation:appear-title 3s ease-in-out;
+    position: relative;
+    top: -40px;
+    /*left: 180px;*/
+    font-family: 'oswaldregular';
+    font-size: 24px;
+    color: #353230;
+  /*  width: 260px;*/
+  /*  z-index:9;*/
+    text-align:center;
+}
+.frase:before,.frase:after{
+  content: '"';
+}
+.more {
+    display: block !important;
+    text-align: center;
+    margin-top: -20px;
+    opacity: .5;
+    color: #a52a2a;
+}
+.bio_list {
+  list-style: none;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  font-family: 'oswaldregular';
+  width: 300px;
+  font-size: 24px;
+  text-align: center;
+  opacity: .8;
+}
+.bio_list li{
+  margin:10px 0px
+}
 /*   */
 
-.bloque_form2{
-  padding:20px;
-}
-.bloque_form2 div {
-    width: 100%;
-}
 
-input[type='text'],input[type='email']{
-  -webkit-appearance:none;
-  border:2px solid #f7f7f7;
-  border-radius:5px;
-  height:30px;
-  padding: 0px 5px;
-  width: 100%;
-  margin: 5px 0px;
-}
-input[type='submit']{
-  border:none;
-  background:green;
-  padding: 10px 20px;
-  border-radius:5px;
-  font-family:'oswaldregular';
-  color:white;
-  margin-top: 5px;
-}
-input[type='reset']{
-  border:none;
-  background:red;
-  padding: 10px 20px;
-  border-radius:5px;
-  font-family:'oswaldregular';
-  color:white;
-  margin-top: 5px;
-}
-textarea{
-  -webkit-appearance:none;
-  border:2px solid #f7f7f7;
-  border-radius:5px;
-  height:60px;
-  padding: 0px 5px;
-  width: 100%;
-  margin:5px 0px;
-}
-
-.bloque_form1 h3, .bloque_form2 label{
-  font-family:'oswaldregular';
-}
 #contacto{
   font-family: 'oswaldregular';
 }
@@ -549,10 +630,11 @@ textarea{
   margin-top: 5px;
 font-size: 24px;
 opacity: 0;
+  font-family:'oswaldregular';
 
   -webkit-transition:all 1s ease-in-out;
 }
-.bloque_form1 div {
+#contacto div {
 
     position:relative;
     display:block;
@@ -565,15 +647,45 @@ opacity: 0;
   0%{-webkit-transform:rotateY(0deg)}
   100%{-webkit-transform:rotateY(360deg)}
 }
-.bloque_form1 img{
+#contacto img{
 
   height:150px;
   width:150px;
 }
-.bloque_form1:hover img{
+#contacto:hover img{
   -webkit-animation:girar 1s ease-in-out;
 }
-.bloque_form1:hover h3{
+#contacto:hover h3{
   -webkit-transition:all 1s ease-in-out;
   opacity:.5;
+}
+.form {
+    padding: 10px;
+    border: 1px solid #f7f7f7;
+    background: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.form a {
+    text-decoration: none;
+    padding: 10px;
+    background: #ea6415;
+    margin: 10px;
+    display: block;
+    border-radius: 5px;
+    color:white;
+    border-bottom:2px solid brown;
+}
+.form a:hover {
+    background: brown;
+}
+.black-line{
+  border-bottom: 2px solid brown;
+  width:80%;
+  text-align:center;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  opacity: .3;
 }

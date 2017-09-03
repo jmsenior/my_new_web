@@ -1,12 +1,12 @@
 function ejecucion(){
+
   insertarCSS();
   insertarFormas();
   insertarFooter();
   inicio();
 }
-ejecucion();
 
-
+window.onload = ejecucion();
 
 function insertarCSS(){
 if(window.innerWidth <= 660){
@@ -16,12 +16,11 @@ if(window.innerWidth <= 660){
   document.querySelector('head').innerHTML = '<link href="css/tablet.css" rel="stylesheet" media="all"/>';
   document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
 }else{
-document.querySelector('head').innerHTML = '<link href="css/desktop.css" rel="stylesheet" media="all"/>';
-document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
+  document.querySelector('head').innerHTML = '<link href="css/desktop.css" rel="stylesheet" media="all"/>';
+  document.querySelector('head').innerHTML += '<link href="fonts/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" media="all"/>';
 }
 
 }
-//insertarCSS();
 
 function insertarFormas(){
   document.querySelector('#name-block').innerHTML += '<svg id="triangulo"><polygon points="90,120 350,190 160,210" style="fill:yellow;" /></svg>\
@@ -30,29 +29,25 @@ function insertarFormas(){
     <svg id="circulo-lineal1"><circle stroke-dasharray="25,100" cx="250" cy="250" r="200" fill="transparent" stroke="#FFDD7D" stroke-width="20" stroke-linecap="square"/></svg>\
     <svg id="circulo-lineal2"><circle stroke-dasharray="25,3, 40, 20, 100" cx="450" cy="450" r="450" fill="transparent" stroke="gray" stroke-width="20" stroke-linecap="square"/></svg>';
 }
-//insertarFormas();
 
 function insertarFooter(){
   document.querySelector('footer').innerHTML += '<div id="external-links">\
     <ul class="e_links">\
-      <li><a href="#"><i class="fa fa-facebook"></i></a></li>\
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>\
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>\
-      <li><a href="#"><i class="fa fa-codepen"></i></a></li>\
-      <li><a href="#"><i class="fa fa-github"></i></a></li>\
-      <li><a href="#"><i class="fa fa-vimeo"></i></a></li>\
+      <li><a href="https://www.facebook.com/JmVisualCreativity" target="_blank"><i class="fa fa-facebook"></i></a></li>\
+      <li><a href="https://twitter.com/chetemele" target="_blank"><i class="fa fa-twitter"></i></a></li>\
+      <li><a href="https://www.linkedin.com/in/jmvisualcreativity" target="_blank"><i class="fa fa-linkedin"></i></a></li>\
+      <li><a href="https://github.com/jmsenior" target="_blank"><i class="fa fa-github"></i></a></li>\
+      <li><a href="https://vimeo.com/channels/389093" target="_blank"><i class="fa fa-vimeo"></i></a></li>\
     </ul>\
   </div>';
 }
-//insertarFooter();
 
 function inicio(){
-
 
   document.querySelector('.content-block').innerHTML = "<div id='home'>\
     <ul class='menu-list'>\
       <li><a onclick='portfolio()' class='menu-links' href='#'>Portfolio</a></li>\
-      <li><a class='menu-links' href='#'>Playground</a></li>\
+      <li><a onclick='playground()' class='menu-links' href='#'>Playground</a></li>\
       <li><a onclick='biography()' class='menu-links' href='#'>Bio</a></li>\
       <li><a onclick='contacto()' class='menu-links' href='#'>Contact</a></li>\
     </ul>\
@@ -64,15 +59,14 @@ function inicio(){
   <div class='servicios'><span>Diseño 3D</span><i class='fa fa-cube'></i></div>\
   <div class='servicios'><span>Desarrollo Front-End</span><i class='fa fa-code'></i></div>\
   <div class='servicios'><span>Web VR</span><i class='fa fa-eye'></i></div>\
-  <div>";
+  <div>\
+  <h2 class='home-quote'>'La creatividad es contagiosa, pásala'</h2>";
     document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Welcome</h1>";
 
     if(window.innerWidth > 992){
-      document.querySelector('#content-h1').innerHTML += "<p class='texto_bienve'>Bienvenido a mi nueva web, en la que podrás encontrar algunos ejemplos de mis trabajos en todos los ámbitos señalados, también puedes ver más trabajos y ejemplos en los enlaces externos";
+      document.querySelector('#content-h1').innerHTML += "<p class='texto_bienve'>Bienvenido a mi nueva web, en la que podrás encontrar algunos ejemplos de mis trabajos en todos los ámbitos señalados, también puedes ver más información en los enlaces externos";
     }
 };
-//inicio();
-
 
 function portfolio(){
 
@@ -89,6 +83,10 @@ function portfolio(){
     </ul>\
     </div>";
     document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Portfolio</h1>";
+
+    if(window.innerWidth > 992){
+      document.querySelector('#content-h1').innerHTML += "<p class='texto_bienve'>Una breve selección, de trabajos comerciales para cliente final, público objetivo, ejemplos colaborativos y creaciones personales.</p>";
+    }
   };
 
 
@@ -123,7 +121,7 @@ function portfolio(){
   function logotipos(){
 
     var imagenes = [1,2,3,4,5,6,7,8,9];
-    var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
+    var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo,identidad corporativa y papelería publicitaria para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
 
     document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Logotipos</h1>";
 
@@ -149,7 +147,16 @@ function portfolio(){
     function webs(){
 
       var imagenes = [1,2,3,4,5,6,7,8];
-      var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
+      var descripciones = [
+        "Tienda online <a href='http://tu-mundo.online/es/' class='preview' target='_blank' rel='noindex,nofollow'><i class='fa fa-eye'></i> Ver</a>",
+        "Tienda online <a href='http://etcbyetcetera.com/es/' class='preview' target='_blank' rel='noindex,nofollow'><i class='fa fa-eye'></i> Ver</a>",
+        "Web empresarial <a href='http://www.hermanosjimeneznavarro.com/' class='preview' target='_blank' rel='noindex,nofollow'><i class='fa fa-eye'></i> Ver</a>",
+        "Anterior portfolio web <a href='http://jmvisualcreativity.es/old' class='preview' target='_blank' rel='noindex,nofollow'><i class='fa fa-eye'></i> Ver</a>",
+        "Web empresarial <a href='http://www.servi-comfort.com/' class='preview' target='_blank' rel='noindex,nofollow'><i class='fa fa-eye'></i> Ver</a>",
+        "Web particular <a href='http://vidabella.es/' class='preview' target='_blank'><i class='fa fa-eye' rel='noindex,nofollow'></i> Ver</a>",
+        "Portfolio web <a href='http://erosionprecipitada.com/' class='preview' target='_blank'><i class='fa fa-eye' rel='noindex,nofollow'></i> Ver</a>",
+        "Web empresarial <a href='http://achetemele.es/' class='preview' target='_blank'><i class='fa fa-eye' rel='noindex,nofollow'></i> Ver</a>"
+      ]
 
       document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Webs</h1>";
 
@@ -176,7 +183,7 @@ function portfolio(){
      function colaboraciones(){
 
        var imagenes = [1,2,3,4,5,6,7,8];
-       var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
+       var descripciones = ["Diseño de camiseta para Awen Clout","Camiseta para Escuela Arte Granada","Colaboración para exposición en el Museo de Arte de Algeciras","Colaboración para Escuela Arte Granada","Colaboración para Estación Diseño","Diseño de portada par Yah! Magazine","Logotipo para blos de música electrónica","Logotipo para App de Play Store"]
 
        document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Colaboraciones</h1>";
 
@@ -202,7 +209,7 @@ function portfolio(){
       function carteles(){
 
         var imagenes = [1,2,3,4,5,6,7,8,9];
-        var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
+        var descripciones = ["Cartel publicitario pra sala Underground","Cartel publicitario para empresa de comida rápida","Cartel publicitario","Cartel publicitario de exposición","Cartel informativo para asociación","Cartel publicitario pra Sala Apolo 2 (BCN)","Cartel publicitario de Dj Quarkore","Cartel publicitario de Dj Quarkore","Cartel publicitario de Bar-Restaurante"]
 
         document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Carteles</h1>";
 
@@ -228,7 +235,7 @@ function portfolio(){
        function videos(){
 
          var imagenes = [1,2,3,4,5,6,7,8];
-         var descripciones = ["Video promocional de JM Visual Creativity","Video promocional de 301seotool","Video promocional de Dream Clubbers","Video promocional de DJ RuxKorp","Logotipo para sello discográfico","Tráiler del corto de animación 'Guilt'","Animación para exposición de Goya","Cabecera promocional de Festival de Desert Rock","Animación de cabecera"]
+         var descripciones = ["Video promocional de JM Visual Creativity","Video promocional de 301seotool","Video promocional de Dream Clubbers","Video promocional de DJ RuxKorp","Tráiler del corto de animación 'Guilt'","Animación para exposición de Goya","Cabecera promocional de Festival de Desert Rock","Animación de cabecera"]
          var enlaces = [
 '<iframe src="https://player.vimeo.com/video/165717480?color=ff9933&byline=0&portrait=0" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 '<iframe width="100%" height="315" src="https://www.youtube.com/embed/BOZI-u3jrCM" frameborder="0" allowfullscreen></iframe>',
@@ -237,7 +244,7 @@ function portfolio(){
 '<iframe src="https://player.vimeo.com/video/71604699?color=ff9933&byline=0&portrait=0" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 '<iframe src="https://player.vimeo.com/video/141839498?color=ff9933&byline=0&portrait=0" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
 '<iframe src="https://player.vimeo.com/video/32226385?color=ff9933&byline=0&portrait=0" width="100%" height="362" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
-'<iframe src="https://player.vimeo.com/video/48952438?byline=0&portrait=0" width="640" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+'<iframe src="https://player.vimeo.com/video/48952438?byline=0&portrait=0" width="100%" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
          ]
 
          document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Videos</h1>";
@@ -264,7 +271,14 @@ function portfolio(){
         function vr(){
 
           var imagenes = [1,2,3,4,5,6,7,8];
-          var descripciones = ["Logotipo e identidad corporativa de empresa","Logotipo e identidad corporativa de empresa","Logotipo para clínica de fisioterapia","Logotipo e identidad corporativa para bar-restaurante","Logotipo para sello discográfico","Logotipo e identidad corporativa para Café Bar-Teatro","Logotipo para blog de programación","Logotipos para empresa de Páginas Web","Logotipo para DJ RuxKorp"]
+          var descripciones = ["Portfolio WebVR <a href='vr_portfolio/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Representación del Sistema Solar en VR <a href='vr_space' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Homenaje a Silent Hill en VR <a href='vr_room/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Parkour en VR <a href='vr_roof/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Homenaje a Twin Peaks en VR <a href='vr_twin/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Escenografía con objeto 3D de Evangelion 01 en VR - Controles: A,S,W,D y Espacio <a href='vr_eva/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Escenografía con objeto 3D de Metal Gear Rex en VR - Controles: A,S,W,D <a href='vr_metal/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>",
+          "Mini juego en VR. ¿Llegarás a lo más alto? <a href='vr_jump/' class='preview' target='_blank'><i class='fa fa-eye'></i> Ver</a>"]
 
           document.querySelector('#content-h1').innerHTML = "<h1 class='name'>VR</h1>";
 
@@ -313,9 +327,47 @@ if ( objetoCerrar.classList.contains('hide')){
 }
 
 
-  //document.querySelector("#back-img").remove();
-//  document.querySelector("#back-img").style.display = 'none';
 }
+
+//
+function playground(){
+
+
+  var imagenes = [1,2,3,4,5];
+  var descripciones = [
+    'Mi propio sistema operativo en crecimiento creado con Html, Css y jQuery <a href="play_cheos/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
+    'Tres aficiones en una: Diseñar, programar y tocar la guitarra. <a href="play_guitar/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a> ',
+    'Diseño creado solamente en CSS3 <a href="play_eye/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
+    'Un diseño creativo y actual para tus tipografías realizado con Css3  <a href="play_font/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
+    '¿Acaso es un truco de magia? No es CSS3 <a href="play_card/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>'
+  ]
+
+  document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Playground</h1>";
+
+  document.querySelector('.content-block').innerHTML = "<div id='playground'>";
+
+  document.querySelector('#playground').innerHTML += "<p class='texto_play'>Zona experimental en constante crecimiento de prácticas creativas con Html5, Css3, Javascript, jQuery,...</p>";
+
+  for(var i = 0; i <= 4 ; i++){
+    document.querySelector('#playground').innerHTML += "<div class='item'>\
+    <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/play/play_" + imagenes[i] + "min.png'/>\
+    <div id='back-img" + imagenes[i] + "' class='hide'>\
+    <div class='content'>\
+    <a class='cerrar btn' onclick='cerrar(" + imagenes[i] + ")'><i class='fa fa-remove'></i></a>\
+    <img id='img-grande" + imagenes[i] + "' src='img/play/play_" + imagenes[i] + ".png' />\
+    <p id='texto" + imagenes[i] + "'>" + descripciones[i] + " </p>\
+    </div>\
+    </div>\
+    </div>";
+
+
+  }
+
+  document.querySelector('#playground').innerHTML += "<a href='#' class='volver_listado' onclick='inicio()'><i class='fa fa-chevron-left'></i> Volver</a>";
+  document.querySelector('.content-block').innerHTML += "</div>";
+
+
+};
 
 
 //
@@ -323,41 +375,61 @@ if ( objetoCerrar.classList.contains('hide')){
 function biography(){
 
 var imagenesBio = ['html5','css3','javascript','jquery','jquery-mobile','bootstrap','as3','ai','fl','id','pr','ae','ps','dw','corel','fontlab','freehand','quark','twig']
-var imagenesTitle = ['Html5','Css3','Javascript','jQuery','jQuery-Mobile y jQUery UI','Boostrap','Actionscript 3.0','Illustrator','Flash professional','inDesign','Premiere Pro','After Effects','Photoshop','Dreamweaver','Corel Draw','Font Lab Studio','Freehand MX','QuarkXpress','Twig templates' ]
+var imagenesTitle = ['Html5','Css3','Javascript','jQuery y jQuery UI','jQuery-Mobile','Boostrap','Actionscript 3.0','Illustrator','Flash professional','inDesign','Premiere Pro','After Effects','Photoshop','Dreamweaver','Corel Draw','Font Lab Studio','Freehand MX','QuarkXpress','Twig templates' ]
 
+
+
+
+  document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Bio</h1>";//"<img class='retrato' src='img/varios/retrato.png'/>";
   document.querySelector('.content-block').innerHTML = "<div id='bio'>";
 
+
+
+  document.querySelector('#bio').innerHTML += "<img class='retrato' src='img/varios/retrato.png'/>";
+  document.querySelector('#bio').innerHTML += "<h3 class='frase'>El éxito es simplemente, la aplicación diaria de la disciplina</h3>";
+  document.querySelector('#bio').innerHTML += "<i class='more fa fa-chevron-down fa-2x'></i>";
+  document.querySelector('#bio').innerHTML += "<div class='portrait'>\
+  <ul class='bio_list'>\
+  <li>Desarrollador Front-End</li>\
+  <li>Diseñador Gráfico y Web</li>\
+  <li>Productor Motion Graphics</li>\
+  <li>Desarrollador y diseñador de WebVR</li>\
+  <li> ... </li>\
+  <ul>\
+  </div>";
+
   for(var i = 0; i < imagenesBio.length; i++){
-    document.querySelector('#bio').innerHTML += "<img title='" + imagenesTitle[i] + "' src='img/logos/" + imagenesBio[i] + ".png'/>";
+    document.querySelector('#bio').innerHTML += "<img class='programas' title='" + imagenesTitle[i] + "' src='img/logos/" + imagenesBio[i] + ".png'/>";
   }
 
     document.querySelector('.content-block').innerHTML += "</div>";
+
+    document.querySelector('#bio').innerHTML += "<a href='#' class='volver_listado' onclick='inicio()'><i class='fa fa-chevron-left'></i> Volver</a>";
+
 
 }
 
 //
 
 function contacto(){
- document.querySelector('.content-block').innerHTML = '<div class="bloque_form1">\
+ document.querySelector('.content-block').innerHTML = '<div id="contacto">\
    <div><img class="img_contact" src="img/varios/logo_jm.png" />\
    <h3 class="contact_h3">JM Visual Creativity</h3></div>\
-   </div>\
-   <div class="bloque_form2">\
-   <form action="mail.php" method="post">\
-   <div><label for="Nombre"><i class="fa fa-user"></i> Nombre</label>\
-   <input type="text" name="name" placeholder="Nombre" required/></div>\
-   <div><label for="E-mail"><i class="fa fa-envelope-o"></i> E-mail</label>\
-   <input type="email" name="email" placeholder="E-mail" required/></div>\
-   <div><label for="Asunto"><i class="fa fa-comment"></i> Asunto</label>\
-   <input type="text" name="subject" placeholder="Asunto" required></div>\
-   <div><label for="Descripción"><i class="fa fa-pencil"></i> Descripción</label>\
-   <textarea cols="50" rows="4" name="message" placeholder="Descripción">\
-   </textarea></div>\
-   <input type="submit" value="ENVIAR"/>\
-   <input type="reset" value="LIMPIAR" />\
-   </form>\
+   <div>\
+   <hr class="black-line"/>\
+   <ul class="bio_list">\
+   <li>Desarrollador Front-End</li>\
+   <li>Diseñador Gráfico y Web</li>\
+   <li>Productor Motion Graphics</li>\
+   <li>Desarrollador y diseñador de WebVR</li>\
+   <li class="form">Para cualquier consulta e información <a href="mailto:info@jmvisualcreativity.es"><i class="fa fa-envelope-o"></i> Enviar correo</a> </li>\
+   <ul>\
    </div>';
 
+   document.querySelector('#contacto').innerHTML += "<a href='#' class='volver_listado' onclick='inicio()'><i class='fa fa-chevron-left'></i> Volver</a>";
 
      document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Contacto</h1>";
+     if(window.innerWidth > 992){
+       document.querySelector('#content-h1').innerHTML += "<p class='texto_bienve'>Para cualquier consulta que quieras realizar, rellena el siguiente formulario</p>";
+     }
 }
