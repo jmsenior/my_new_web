@@ -139,7 +139,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmhsss/-----------------/sssmmmMMMMMMMMMMMMMMM
     background: #e8ab21;
     position: relative;
     float:left;
-    overflow:hidden;
+    /*overflow:hidden;*/
     z-index:2;
 
   }
@@ -343,6 +343,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmhsss/-----------------/sssmmmMMMMMMMMMMMMMMM
     border-right: 2px solid #ea6415;
     padding: 5px 10px;
     text-decoration: none;
+    display: inline-block;
   }
   .preview:hover{
     background: #ea6415;
