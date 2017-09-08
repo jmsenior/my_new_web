@@ -44,6 +44,7 @@ function insertarFooter(){
 
 function inicio(){
 
+
   document.querySelector('.content-block').innerHTML = "<div id='home'>\
     <ul class='menu-list'>\
       <li><a onclick='portfolio()' class='menu-links' href='#'>Portfolio</a></li>\
@@ -100,6 +101,10 @@ function portfolio(){
       document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Productos</h1>";
 
       document.querySelector('.content-block').innerHTML = "<div id='productos'>";
+      if(window.innerWidth < 481){
+        document.querySelector('#productos').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+      }
+
       for(var i = 0; i <= 8; i++){
         document.querySelector('#productos').innerHTML += "<div class='item'>\
       <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/productos/" + imagenes[i] + "_min.png'/>\
@@ -126,6 +131,9 @@ function portfolio(){
     document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Logotipos</h1>";
 
     document.querySelector('.content-block').innerHTML = "<div id='logotipos'>";
+    if(window.innerWidth < 481){
+      document.querySelector('#logotipos').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+    }
     for(var i = 0; i <= 8; i++){
       document.querySelector('#logotipos').innerHTML += "<div class='item'>\
     <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/logotipos/" + imagenes[i] + "_min.png'/>\
@@ -161,6 +169,11 @@ function portfolio(){
       document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Webs</h1>";
 
       document.querySelector('.content-block').innerHTML = "<div id='webs'>";
+
+      if(window.innerWidth < 481){
+        document.querySelector('#webs').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+      }
+
       for(var i = 0; i <= 7; i++){
         document.querySelector('#webs').innerHTML += "<div class='item'>\
       <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/webs/" + imagenes[i] + "_min.png'/>\
@@ -188,6 +201,10 @@ function portfolio(){
        document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Colaboraciones</h1>";
 
        document.querySelector('.content-block').innerHTML = "<div id='colaboraciones'>";
+       if(window.innerWidth < 481){
+         document.querySelector('#colaboraciones').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+       }
+
        for(var i = 0; i <= 7; i++){
          document.querySelector('#colaboraciones').innerHTML += "<div class='item'>\
        <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/colaboraciones/" + imagenes[i] + "_min.png'/>\
@@ -214,6 +231,9 @@ function portfolio(){
         document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Carteles</h1>";
 
         document.querySelector('.content-block').innerHTML = "<div id='carteles'>";
+        if(window.innerWidth < 481){
+          document.querySelector('#carteles').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+        }
         for(var i = 0; i <= 8; i++){
           document.querySelector('#carteles').innerHTML += "<div class='item'>\
         <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/carteles/" + imagenes[i] + "_min.png'/>\
@@ -250,6 +270,9 @@ function portfolio(){
          document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Videos</h1>";
 
          document.querySelector('.content-block').innerHTML = "<div id='videos'>";
+         if(window.innerWidth < 481){
+           document.querySelector('#videos').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+         }
          for(var i = 0; i <= 7; i++){
            document.querySelector('#videos').innerHTML += "<div class='item'>\
          <img class='min-img' onclick='ampliarProductos(" + imagenes[i] + ")' src='img/videos/" + imagenes[i] + "_min.png'/>\
@@ -283,6 +306,9 @@ function portfolio(){
           document.querySelector('#content-h1').innerHTML = "<h1 class='name'>VR</h1>";
 
           document.querySelector('.content-block').innerHTML = "<div id='realidad'>";
+          if(window.innerWidth < 481){
+            document.querySelector('#realidad').innerHTML += "<p class='deslice'>Deslize hacia abajo <i class='fa fa-chevron-down'></i></p>";
+          }
           for(var i = 0; i <= 7; i++){
             document.querySelector('#realidad').innerHTML += "<div class='item'>\
           <img class='min-img' onclick='ampliarProductos("+ imagenes[i] +")' src='img/vr/" + imagenes[i] + "_min.png'/>\
@@ -333,9 +359,10 @@ if ( objetoCerrar.classList.contains('hide')){
 function playground(){
 
 
+
   var imagenes = [1,2,3,4,5];
   var descripciones = [
-    'Mi propio sistema operativo en crecimiento creado con Html, Css y jQuery <a href="play_cheos/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
+    'Bienvenido al "nuevo" Sistema Operativo CHE OS, un banco de pruebas en constante crecimiento imitando al clásico sistema operativo de mediados de los 90. <a href="play_cheos/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
     'Tres aficiones en una: Diseñar, programar y tocar la guitarra. <a href="play_guitar/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a> ',
     'Diseño creado solamente en CSS3 <a href="play_eye/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
     'Un diseño creativo y actual para tus tipografías realizado con Css3  <a href="play_font/" class="preview" target="_blank"><i class="fa fa-eye"></i> Ver</a>',
@@ -380,7 +407,7 @@ var imagenesTitle = ['Html5','Css3','Javascript','jQuery y jQuery UI','jQuery-Mo
 
 
 
-  document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Bio</h1>";//"<img class='retrato' src='img/varios/retrato.png'/>";
+  document.querySelector('#content-h1').innerHTML = "<h1 class='name'>Biografía</h1>";//"<img class='retrato' src='img/varios/retrato.png'/>";
   document.querySelector('.content-block').innerHTML = "<div id='bio'>";
 
 
